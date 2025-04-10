@@ -69,3 +69,18 @@ footer {
     text-align: center;
     padding: 1rem;
 }
+
+.footer-content {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.footer-content a {
+    color: #eae7dc;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
