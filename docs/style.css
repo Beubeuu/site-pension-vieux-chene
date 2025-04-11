@@ -84,3 +84,18 @@ footer {
 .footer-content a:hover {
     text-decoration: underline;
 }
+
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebc59;
+}
