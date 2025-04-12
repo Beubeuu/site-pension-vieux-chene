@@ -60,32 +60,59 @@
 <div style="text-align: center; margin-top: 2rem;">
     <img src="images/logo.png" alt="Logo Pension" style="max-height: 200px;">
 </div>
+
+
+
+<!-- Section Météo -->
+<section style="background-color: #f7f4ed; padding: 2rem; text-align: center;">
+  <h2>Météo au Tampon</h2>
+  <div id="weather">
+    <p>Chargement des données météo...</p>
+  </div>
 </section>
-<!-- Début Widget Météo Le Tampon via weatherwidget.io -->
-<!-- Widget météo libre et gratuit - Pas de cookies ni tracking -->
 
-<!-- Lien vers le site météo + nom de la ville affichée -->
-<a class="weatherwidget-io" 
-   href="https://forecast7.com/fr/21d28s55d52/le-tampon/" 
-   data-label_1="LE TAMPON" 
-   data-label_2="Météo" 
-   data-theme="original">
-   LE TAMPON Météo
-</a>
-
-<!-- Script nécessaire au fonctionnement du widget météo -->
 <script>
-!function(d,s,id){
-var js,fjs=d.getElementsByTagName(s)[0];
-if(!d.getElementById(id)){
-    js=d.createElement(s);
-    js.id=id;
-    js.src='https://weatherwidget.io/js/widget.min.js';
-    fjs.parentNode.insertBefore(js,fjs);
-}
-}(document,'script','weatherwidget-io-js');
+  // Fonction pour mapper le weathercode à une icône
+  function getWeatherIcon(code) {
+    const icons = {
+      0: 'sun.svg',
+      1: 'cloud.svg',
+      2: 'cloud.svg',
+      3: 'rain.svg',
+      45: 'fog.svg',
+      48: 'fog.svg',
+      51: 'rain.svg',
+      53: 'rain.svg',
+      55: 'rain.svg',
+      61: 'rain.svg',
+      63: 'rain.svg',
+      65: 'rain.svg',
+      71: 'snow.svg',
+      73: 'snow.svg',
+      75: 'snow.svg',
+      95: 'storm.svg',
+      96: 'storm.svg',
+      99: 'storm.svg'
+    };
+    return icons[code] || 'default.svg';
+  }
+
+  // Appel de l'API Open-Meteo
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=-21.280&longitude=55.520&current_weather=true')
+    .then(response => response.json())
+    .then(data => {
+      const weather = data.current_weather;
+      const icon = getWeatherIcon(weather.weathercode);
+      document.getElementById('weather').innerHTML = `
+        <img src="icons/${icon}" alt="Icône météo" width="50" height="50">
+        <p>Température actuelle : ${weather.temperature}°C</p>
+        <p>Vent : ${weather.windspeed} km/h</p>
+      `;
+    })
+    .catch(error => {
+      document.getElementById('weather').innerHTML = "<p>Impossible de récupérer les données météo.</p>";
+    });
 </script>
-<!-- Fin Widget Météo -->
 
 <footer>
     <div class="footer-content">
