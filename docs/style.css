@@ -61,22 +61,23 @@ body.dark-mode .service-card {
     color: #f0f0f0;
 }
 
-/* Adaptation du logo en Dark Mode : affichage d'un logo blanc propre */
-body.dark-mode header img {
+/* Adaptation logo automatique en Dark Mode */
+body.dark-mode img[src="images/logo.png"] {
     content: url('images/logo-blanc.png');
 }
 
-/* ====== Adaptation météo : fond sombre transparent en Dark Mode ====== */
-#weather {
-    background-color: rgba(0, 0, 0, 0.1); /* fond léger clair par défaut */
+/* ====== Fond sombre pour la météo en Dark Mode ====== */
+body.dark-mode #weather {
+    background-color: rgba(0, 0, 0, 0.6); /* Fond noir transparent pour lisibilité */
+    color: #f0f0f0; /* Texte clair en Dark Mode */
     padding: 1rem;
     border-radius: 8px;
-    display: inline-block;
 }
 
-body.dark-mode #weather {
-    background-color: rgba(255, 255, 255, 0.1); /* fond léger foncé pour Dark Mode */
+body.dark-mode #weather-container {
+    background-color: rgba(0, 0, 0, 0.6); /* Fond de la section météo aussi en dark */
 }
+
 
 /* ====== En-tête ====== */
 header {
