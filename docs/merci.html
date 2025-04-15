@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci - Pension Canine du Vieux Chêne</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-background {
+            background-image: url('images/merci-chien.jpg');
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+
+        .hero-background::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">Qui sommes-nous</a>
+        <a href="reservation.html">Réserver</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="hero-background fade-in">
+    <div class="hero-content">
+        <h1>Merci pour votre réservation ! 🐾</h1>
+        <p>Nous avons bien reçu votre demande et nous vous contacterons rapidement pour finaliser les détails. 💬</p>
+
+        <div style="margin-top: 2rem;">
+            <h2>Un cadeau attend votre compagnon ! 🎁</h2>
+            <p>Lors de sa première venue, un sachet de friandises locales lui sera offert en guise de bienvenue. 😋</p>
+        </div>
+
+        <div style="margin-top: 3rem;">
+            <a href="index.html" class="btn">Retour à l'accueil</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <p>Pension Canine du Vieux Chêne - Le Petit Tampon, 97430 La Réunion</p>
+        <p>Téléphone : 06 93 60 35 11</p>
+        <p>
+            <a href="https://www.facebook.com/profile.php?id=61570501300626" target="_blank">Facebook</a> |
+            <a href="reservation.html">Réserver</a>
+        </p>
+        <a href="legal.html">Mentions légales</a>
+    </div>
+    <p>&copy; 2025 Pension Canine du Vieux Chêne</p>
+    <a href="https://wa.me/262695476713?text=Bonjour,%20je%20souhaite%20des%20infos%20pour%20la%20pension%20canine." target="_blank" class="btn-whatsapp">
+        <img src="images/whatsapp.svg" alt="WhatsApp" style="height:20px; vertical-align:middle; margin-right:8px;">
+        Contacter par WhatsApp
+    </a>
+</footer>
+
+</body>
+</html>
