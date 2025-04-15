@@ -1,6 +1,6 @@
 # Pension Canine du Vieux Chêne
 
-![Logo Pension Canine du Vieux Chêne](docs/images/logo.png)
+![Logo Pension Canine du Vieux Chêne](docs/images/logo-blanc.png)
 
 
 ## Présentation
