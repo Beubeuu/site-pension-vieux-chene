@@ -1,71 +1,67 @@
+# Pension Canine du Vieux Chêne
 
-# 🐾 Site Web - Pension Canine du Vieux Chêne
+![Logo Pension Canine du Vieux Chêne](images/logo.png)
 
-Bienvenue sur le dépôt GitHub du site officiel de la Pension Canine du Vieux Chêne.
+## Présentation
 
-> Projet DIY réalisé en HTML / CSS pur pour une gestion simple, rapide, légère et propriétaire.
-
----
-
-## 🌿 Présentation
-
-La Pension Canine du Vieux Chêne est située au Petit Tampon (La Réunion) et propose des services de garde pour chiens dans un cadre naturel et sécurisé.
+Site vitrine officiel de la Pension Canine du Vieux Chêne (Le Petit Tampon, La Réunion).
 
 Ce site a été réalisé en pur HTML/CSS afin de garantir :
+
 - Une totale indépendance technique
 - Une propriété complète du site et des fichiers
 - Un site rapide et optimisé pour les utilisateurs
 
----
+Ce site est actuellement hébergé gratuitement via GitHub Pages pour les tests et l'évaluation.
 
-## 📁 Arborescence du site
+### Hébergement final prévu :
 
-```
-/docs/
-├── index.html        --> Accueil
-├── about.html        --> Qui sommes-nous
-├── services.html     --> Nos services et tarifs
-├── reservation.html  --> Réservation (lien Brevo)
-├── landing.html      --> Landing page dédiée
-├── legal.html        --> Mentions légales & RGPD
-├── style.css         --> Feuille de style commune
-└── /images/          --> Images du site
-```
+Le site sera hébergé prochainement en local sur une Raspberry Pi 3 avec Matomo installé pour un suivi des statistiques respectueux du RGPD et auto-hébergé.
 
 ---
 
-## 🚀 Mise en ligne
+## Fonctionnalités réalisées
 
-Ce site est hébergé gratuitement via GitHub Pages.
-
-Accès au site :  
-https://beubeuu.github.io/site-pension-vieux-chene/
-
----
-
-## 🛠️ Technologies utilisées
-
-- HTML5
-- CSS3
-- Git & GitKraken
-- GitHub Pages
-- Formulaire externe via Brevo
+- Site full responsive (mobile / tablette / PC)
+- Mode sombre (Dark Mode) activable manuellement
+- Formulaire de réservation intégré via iframe Brevo (ex Sendinblue)
+- Section météo dynamique via API Open Meteo
+- Mentions légales conformes RGPD
+- Footer complet avec liens de contact et WhatsApp
+- SEO optimisé sur toutes les pages (balises Title, Meta Description, arborescence claire)
+- Design sobre, naturel et efficace
+- Intégration Matomo prévue (déjà en partie scriptée)
 
 ---
 
-## 📦 Organisation du projet
+## Pages disponibles
 
-Projet réalisé dans le cadre de mon activité professionnelle en pension canine.
-
-Objectifs :
-- Créer un site simple mais efficace
-- Valoriser un savoir-faire local
-- Mettre en place un écosystème web propriétaire et maîtrisé
-- Déployer sur GitHub Pages en autonomie complète
+- Accueil (index.html)
+- Services (services.html)
+- À propos / Qui sommes-nous (about.html)
+- Réservation (reservation.html)
+- FAQ (faq.html)
+- Contact (contact.html)
+- Mentions légales (legal.html)
+- Page Merci (merci.html)
 
 ---
 
-## 👨‍💻 Auteur
+## Auteur
 
-- Projet réalisé par *Beubeuu*  
-Ingénieur Electronique de formation — Eleveur / Gérant Pension Canine — Passionné DIY & Tech.
+Benoit GIRAUD-MISSIER
+
+Projet réalisé dans le cadre du BP REA 2024 - Évaluation C7
+
+La Réunion - Avril 2024
+
+---
+
+## Capture d'écran
+
+![Aperçu site](images/capture-site.png)
+
+---
+
+> "Un site simple, rapide, éthique et local — comme notre pension canine."
+
