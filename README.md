@@ -1,6 +1,7 @@
 # Pension Canine du Vieux Chêne
 
-![Logo Pension Canine du Vieux Chêne](images/logo.png)
+![Logo Pension Canine du Vieux Chêne](docs/images/logo.png)
+
 
 ## Présentation
 
@@ -59,7 +60,7 @@ La Réunion - Avril 2024
 
 ## Capture d'écran
 
-![Aperçu site](images/capture-site.png)
+![Aperçu site](docs/images/capture-site.png)
 
 ---
 
