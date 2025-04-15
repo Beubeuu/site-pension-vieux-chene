@@ -1,14 +1,46 @@
+<!--
+  ================================================================================
+   Fichier       : index.html
+   Auteur        : Benoit GIRAUD-MISSIER
+   Date de création : 10/04/2024
+  -------------------------------------------------------------------------------
+   Description   : Page d'accueil officielle de la Pension Canine du Vieux Chêne.
+                   Contient une présentation générale, les services principaux,
+                   une section météo dynamique, et des liens de navigation vers
+                   l'ensemble du site. Optimisée SEO, accessible et responsive.
+   Remarques     :
+     - Structure HTML commentée pour l'apprentissage progressif.
+     - Intégration Matomo pour le suivi des visites.
+     - Préparée pour GitHub Pages.
+  ================================================================================
+-->
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Meta pour un affichage responsive sur mobile et tablette -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Pension Canine du Vieux Chêne</title>
+
+    <!-- Titre important pour le SEO : mots clés + localisation -->
+    <title>Pension Canine du Vieux Chêne - Garderie pour chiens au Petit Tampon, La Réunion</title>
+
+    <!-- Meta description : résumé court pour les moteurs de recherche -->
+    <meta name="description" content="Pension canine au Petit Tampon à La Réunion. Garderie sécurisée pour chiens avec grands espaces et tarifs simples. Réservation rapide en ligne.">
+
+    <!-- Feuille de style principale -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<!-- Matomo Analytics prêt à intégrer -->
+
+	<!-- Bouton toggle Dark Mode visible sur toutes les pages -->
+	<button class="toggle-darkmode" onclick="document.body.classList.toggle('dark-mode')">
+		🌗 Mode Sombre
+	</button>
+
+<!-- Tracking Matomo (statistiques de visites) -->
 <script>
   var _paq = window._paq = window._paq || [];
   _paq.push(['trackPageView']);
@@ -21,19 +53,21 @@
     g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
-<!-- Fin Matomo -->
+
+<!-- En-tête du site avec le menu de navigation principal -->
 <header>
-   <!--  <img src="images/logo.png" alt="Logo Pension du Vieux Chêne"> -->
     <nav>
+        <!-- Liens internes pour accélérer la navigation -->
         <a href="index.html">Accueil</a>
         <a href="services.html">Services</a>
         <a href="about.html">Qui sommes-nous</a>
         <a href="reservation.html">Réserver</a>
-		<a href="faq.html">FAQ</a>
-		<a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
     </nav>
 </header>
 
+<!-- Section principale de présentation -->
 <section class="hero">
     <div class="hero-content">
         <h1>Bienvenue à la Pension Canine du Vieux Chêne</h1>
@@ -42,62 +76,51 @@
     </div>
 </section>
 
+<!-- Section décrivant les services proposés -->
 <section class="services-home">
     <h2>Nos Services</h2>
+
     <div class="service-card">
         <h3>Hébergement sécurisé</h3>
         <p>Box individuels adaptés aux chiens réactifs et espace détente de 10 000 m².</p>
     </div>
+
     <div class="service-card">
         <h3>Tarifs simples</h3>
         <p>12 € par jour pour un chien - 20 € pour deux chiens du même foyer.</p>
     </div>
+
     <div class="service-card">
         <h3>Tarifs associations</h3>
         <p>Solutions sur mesure et tarifs solidaires pour les associations.</p>
     </div>
-	<!-- Logo ajouté en fin de contenu principal -->
-<div style="text-align: center; margin-top: 2rem;">
-    <img src="images/logo.png" alt="Logo Pension" style="max-height: 200px;">
-</div>
 
+    <!-- Logo positionné stratégiquement pour renforcer l'identité visuelle -->
+<img src="images/logo.png" class="logo-vieux-chene" alt="Logo Pension Canine du Vieux Chêne" style="max-height: 200px;">
 
-
-<!-- Section Météo -->
-<section style="background-color: #f7f4ed; padding: 2rem; text-align: center;">
-  <h2>Météo au Tampon</h2>
-  <div id="weather">
-    <p>Chargement des données météo...</p>
-  </div>
 </section>
 
+<!-- Section météo dynamique -->
+<section style="background-color: #f7f4ed; padding: 2rem; text-align: center;">
+    <h2>Météo au Tampon</h2>
+    <div id="weather">
+        <p>Chargement des données météo...</p>
+    </div>
+</section>
+
+<!-- Script d'appel à l'API météo et affichage des données -->
 <script>
-  // Fonction pour mapper le weathercode à une icône
+  // Fonction qui définit les icônes de météo
   function getWeatherIcon(code) {
     const icons = {
-      0: 'sun.svg',
-      1: 'cloud.svg',
-      2: 'cloud.svg',
-      3: 'rain.svg',
-      45: 'fog.svg',
-      48: 'fog.svg',
-      51: 'rain.svg',
-      53: 'rain.svg',
-      55: 'rain.svg',
-      61: 'rain.svg',
-      63: 'rain.svg',
-      65: 'rain.svg',
-      71: 'snow.svg',
-      73: 'snow.svg',
-      75: 'snow.svg',
-      95: 'storm.svg',
-      96: 'storm.svg',
-      99: 'storm.svg'
+      0: 'sun.svg', 1: 'cloud.svg', 2: 'cloud.svg', 3: 'rain.svg', 45: 'fog.svg', 48: 'fog.svg',
+      51: 'rain.svg', 53: 'rain.svg', 55: 'rain.svg', 61: 'rain.svg', 63: 'rain.svg', 65: 'rain.svg',
+      71: 'snow.svg', 73: 'snow.svg', 75: 'snow.svg', 95: 'storm.svg', 96: 'storm.svg', 99: 'storm.svg'
     };
     return icons[code] || 'default.svg';
   }
 
-  // Appel de l'API Open-Meteo
+  // Appel de l'API météo Open-Meteo
   fetch('https://api.open-meteo.com/v1/forecast?latitude=-21.280&longitude=55.520&current_weather=true')
     .then(response => response.json())
     .then(data => {
@@ -114,6 +137,7 @@
     });
 </script>
 
+<!-- Pied de page avec les infos de contact -->
 <footer>
     <div class="footer-content">
         <p>Pension Canine du Vieux Chêne - Le Petit Tampon, 97430 La Réunion</p>
@@ -122,17 +146,19 @@
             <a href="https://www.facebook.com/profile.php?id=61570501300626" target="_blank">Facebook</a> |
             <a href="reservation.html">Réserver</a>
         </p>
-		        <p style="font-size: 0.8rem;">
+        <p style="font-size: 0.8rem;">
             <a href="legal.html">Mentions légales</a>
         </p>
     </div>
-	   <p>&copy; 2025 Pension Canine du Vieux Chêne</p>
-	    <a href="https://wa.me/262693603511?text=Bonjour,%20je%20souhaite%20des%20infos%20pour%20la%20pension%20canine." target="_blank" class="btn-whatsapp">
+
+    <p>&copy; 2025 Pension Canine du Vieux Chêne</p>
+
+    <!-- Bouton de contact rapide via WhatsApp -->
+    <a href="https://wa.me/262693603511?text=Bonjour,%20je%20souhaite%20des%20infos%20pour%20la%20pension%20canine." target="_blank" class="btn-whatsapp">
         <img src="images/whatsapp.svg" alt="WhatsApp" style="height:20px; vertical-align:middle; margin-right:8px;">
         Contacter par WhatsApp
     </a>
 </footer>
-
 
 </body>
 </html>

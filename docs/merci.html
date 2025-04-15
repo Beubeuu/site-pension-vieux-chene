@@ -1,10 +1,34 @@
+<!--
+  ================================================================================
+   Fichier       : merci.html
+   Auteur        : Benoit GIRAUD-MISSIER
+   Date de création : 10/04/2024
+  -------------------------------------------------------------------------------
+   Description   : Page de confirmation après réservation. Elle remercie le client,
+                   confirme la réception de sa demande et propose un petit bonus.
+                   Elle contient également un lien de retour vers l'accueil.
+                   Page optimisée SEO, responsive, avec fond dynamique et animation.
+  ================================================================================
+-->
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Balise responsive pour mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merci - Pension Canine du Vieux Chêne</title>
+
+    <!-- Titre SEO : clair + localisé -->
+    <title>Merci pour votre réservation - Pension Canine au Petit Tampon</title>
+
+    <!-- Meta description SEO : visible dans les résultats de recherche -->
+    <meta name="description" content="Merci pour votre demande ! La Pension Canine du Vieux Chêne vous répond sous 24h. Un sachet de friandises locales offert à votre compagnon.">
+
+    <!-- Lien vers la feuille de style principale du site -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Styles spécifiques à cette page (effet visuel + animation d'entrée) -->
     <style>
         .fade-in {
             opacity: 0;
@@ -20,7 +44,7 @@
         }
 
         .hero-background {
-            background-image: url('images/merci-chien.jpg');
+            background-image: url('images/merci-chien.jpg'); /* image de fond en plein écran */
             background-size: cover;
             background-position: center center;
             position: relative;
@@ -29,6 +53,7 @@
             padding: 5rem 1rem;
         }
 
+        /* Calque sombre pour améliorer la lisibilité du texte sur l'image */
         .hero-background::before {
             content: "";
             position: absolute;
@@ -48,6 +73,7 @@
 </head>
 <body>
 
+<!-- Menu de navigation identique aux autres pages pour cohérence -->
 <header>
     <nav>
         <a href="index.html">Accueil</a>
@@ -59,6 +85,7 @@
     </nav>
 </header>
 
+<!-- Section principale de remerciement avec fond et animation -->
 <section class="hero-background fade-in">
     <div class="hero-content">
         <h1>Merci pour votre réservation ! 🐾</h1>
@@ -75,6 +102,7 @@
     </div>
 </section>
 
+<!-- Pied de page standard avec contact, mentions et WhatsApp -->
 <footer>
     <div class="footer-content">
         <p>Pension Canine du Vieux Chêne - Le Petit Tampon, 97430 La Réunion</p>

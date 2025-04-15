@@ -1,31 +1,110 @@
+/* ==============================================================================
+   Fichier       : style.css
+   Auteur        : Benoit GIRAUD-MISSIER
+   Date de création : 10/04/2024
+------------------------------------------------------------------------------
+   Description   : Feuille de style principale du site de la Pension Canine
+                   du Vieux Chêne. Gère la mise en page, les couleurs, les
+                   boutons, le responsive, et l'esthétique globale du site.
+   Remarques     :
+     - Palette inspirée de la nature (#374729 + beige clair)
+     - Compatible mobile via media queries
+     - Préparé pour animations simples et éléments interactifs
+     - Comporte un toggle Dark Mode activable avec une classe
+     - Gère les adaptations visuelles pour le logo et la météo en Dark Mode
+============================================================================== */
 
+/* ====== Bouton Toggle Dark Mode positionné en haut à droite ====== */
+.toggle-darkmode {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: #374729;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.toggle-darkmode:hover {
+    background-color: #2c3a1f;
+}
+
+/* ====== Style général ====== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
     background-color: #f7f4ed;
+    transition: background-color 0.3s, color 0.3s;
 }
 
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+/* En-tête et pied de page foncés pour correspondre au Dark Mode */
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #2c3a1f;
+}
+
+/* Cartes de service en Dark Mode */
+body.dark-mode .service-card {
+    background-color: #2f2f2f;
+    color: #f0f0f0;
+}
+
+/* Adaptation du logo en Dark Mode : affichage d'un logo blanc propre */
+body.dark-mode header img {
+    content: url('images/logo-blanc.png');
+}
+
+/* ====== Adaptation météo : fond sombre transparent en Dark Mode ====== */
+#weather {
+    background-color: rgba(0, 0, 0, 0.1); /* fond léger clair par défaut */
+    padding: 1rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+body.dark-mode #weather {
+    background-color: rgba(255, 255, 255, 0.1); /* fond léger foncé pour Dark Mode */
+}
+
+/* ====== En-tête ====== */
 header {
     background-color: #374729;
     padding: 1rem;
-    text-align: center; /* Centrage du menu */
+    text-align: center;
 }
+
 header img {
     height: auto;
     max-height: 100px;
     width: auto;
 }
 
-
 nav a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
+nav a:hover {
+    text-decoration: underline;
+    color: #d0d0d0;
+}
+
+/* ====== Section Héro Accueil ====== */
 .hero {
     background: url('images/Golden_Fougere.jpg') no-repeat center center/cover;
     color: white;
@@ -37,8 +116,22 @@ nav a {
     background-color: rgba(0, 0, 0, 0.5);
     display: inline-block;
     padding: 2rem;
+    border-radius: 10px;
+    animation: fadeInUp 1s ease-out;
 }
 
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====== Boutons ====== */
 .btn {
     display: inline-block;
     margin-top: 1rem;
@@ -48,8 +141,15 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
+.btn:hover {
+    background-color: #2c3a1f;
+    transform: translateY(-2px);
+}
+
+/* ====== Section Services ====== */
 .services-home {
     padding: 2rem;
     text-align: center;
@@ -61,8 +161,16 @@ nav a {
     padding: 1rem;
     max-width: 400px;
     border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.service-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* ====== Pied de page ====== */
 footer {
     background-color: #374729;
     color: white;
@@ -85,7 +193,7 @@ footer {
     text-decoration: underline;
 }
 
-
+/* ====== Bouton WhatsApp ====== */
 .btn-whatsapp {
     display: inline-block;
     background-color: #25D366;
@@ -94,8 +202,32 @@ footer {
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
 }
 
 .btn-whatsapp:hover {
     background-color: #1ebc59;
 }
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .hero {
+        padding: 5rem 1rem;
+    }
+
+    .hero-content {
+        width: 90%;
+    }
+
+    .service-card {
+        max-width: 90%;
+    }
+}
+
+/* Préparation à d'autres animations visuelles si besoin */
