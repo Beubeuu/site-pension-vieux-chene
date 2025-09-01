@@ -13,7 +13,7 @@ Ce site a été réalisé en pur HTML/CSS afin de garantir :
 - Une propriété complète du site et des fichiers
 - Un site rapide et optimisé pour les utilisateurs
 
-Ce site est actuellement hébergé gratuitement via GitHub Pages pour les tests et l'évaluation.
+Ce site est actuellement hébergé gratuitement via GitHub Pages pour les tests et l'évaluation. Ce site est uniquement à usage personelle et a été créee dans le cadre de la formation BP REA de B. GIRAUD-MISSIEER. Ce site a été designé pour l'activé profesionelle qui débuteras Début 2026.
 
 ### Hébergement final prévu :
 
